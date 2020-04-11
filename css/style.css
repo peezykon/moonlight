@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light-brown: #f8edf5;
+    --brown: #9b6155;
+    --white: #ffffff;
+    -grey: #dbdce0;
+    --col: #d9d0d5;
+    --bgcolor: #f2e7ef;
+}
+
+.container {
+    background-color: var(--col);
+    height: 100vh;
+    font-family: monospace;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.section {
+    /* height: 70%; */
+    /* width: 80%; */
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.picture {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bgcolor);
+}
+
+.logo {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    height: 15%;
+    align-items: center;
+    color: var(--brown);
+}
+
+.picture .logo span.logo-symbol {
+    font-size: 69px;
+    font-weight: bolder;
+    margin-right: 15px;
+    align-self: center;
+    margin-top: -10px;
+}
+
+.picture .logo h1 {
+    font-size: 30px;
+    margin-top: 8px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.picture .logo h1 span {
+    font-weight: 100;
+}
+
+.img {
+    width: 100%;
+    height: 78%;
+    display: flex;
+    justify-content: center;
+}
+
+.img img {
+    width: 70%;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 100%;
+}
+
+.heading {
+    display: none;
+}
+
+.form h2 {
+    color: var(--brown);
+    /* color: black; */
+    margin-bottom: 10px;
+    font-size: 42px;
+    display: flex;
+    align-self: center;
+}
+
+.form p {
+    font-size: 15px;
+    color: var(--col);
+    margin: 10px 0;
+    display: flex;
+    align-self: center;
+}
+
+.text {
+    border-bottom: 2px solid var(--col);
+    position: relative;
+    margin: 20px 0;
+    width: 300px;
+    display: flex;
+    align-self: center;
+}
+
+.text input {
+    font-size: 15px;
+    color: var(--brown);
+    border: none;
+    width: 100%;
+    outline: none;
+    background: none;
+    padding: 0 5px;
+    height: 40px;
+}
+
+.text span::before {
+    content: attr(data-placeholder);
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: var(--col);
+    /* z-index: -1; */
+    transition: .5s;
+}
+
+.text span::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    color: var(--col);
+    transition: .5s;
+    background-color: var(--brown);
+    top: 98%;
+    left: 0;
+}
+
+.focus+span::before {
+    top: -5px;
+    color: var(--brown);
+}
+
+.focus+span::after {
+    width: 100%;
+}
+
+.focuses {
+    border-bottom: 2px solid var(--brown);
+}
+
+.log {
+    display: flex;
+    justify-content: space-around;
+}
+
+.log div {
+    font-size: 15px;
+}
+
+a {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: var(--col);
+    font-size: 15px;
+    transition: .3s;
+}
+
+a:hover {
+    color: var(--brown);
+}
+
+.btn {
+    display: flex;
+    /* text-align: center; */
+    align-self: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 20px 0;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: var(--brown);
+    background-size: 200%;
+    transition: .5s;
+}
+
+@media only screen and (max-width:450px) {
+    .picture {
+        display: none;
+    }
+    .form {
+        width: 50vh;
+    }
+    .heading {
+        display: flex;
+        color: var(--brown);
+    }
+    .heading .logo-symbol {
+        font-size: 55px;
+        font-weight: bolder;
+        margin-right: 15px;
+        align-self: center;
+        margin-left: 20px;
+    }
+    .heading h1 {
+        font-size: 28px;
+        margin-top: 25px;
+        text-transform: uppercase;
+        font-weight: 900;
+    }
+    .heading h1 span {
+        font-weight: 100;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    .form p {
+        font-size: 12px;
+    }
+    .text {
+        width: 240px;
+    }
+    .log div {
+        font-size: 10px;
+    }
+    a {
+        font-size: 12px;
+    }
+}
